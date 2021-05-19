@@ -9,7 +9,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: solid 0.1rem var(--color-grey-light-2); }
 
 *,
 *::after,
@@ -165,7 +167,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: solid 0.2rem var(--color-grey-light-2); }
+  border-bottom: var(--line); }
   .overview__heading {
     text-transform: uppercase;
     font-size: 2.25rem;
@@ -216,11 +218,15 @@ body {
     animation: pulsate 1s infinite; }
 
 @keyframes pulsate {
-  0% { }
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
   50% {
     transform: scale(1.05);
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
-  100% { } }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
 
 .container {
   max-width: 120rem;
@@ -232,7 +238,7 @@ body {
 .header {
   height: 7rem;
   background: #fff;
-  border-bottom: solid 0.2rem var(--color-grey-light-2);
+  border-bottom: var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -250,5 +256,22 @@ body {
 
 .hotel-view {
   background-color: #fff;
-  flex: 1;
-  height: 80rem; }
+  flex: 1; }
+
+.detail {
+  display: flex;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+  padding: 4.5rem; }
+
+.description {
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem; }
+
+.user-reviews {
+  background-color: yellowgreen;
+  flex: 1; }

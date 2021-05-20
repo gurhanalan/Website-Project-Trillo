@@ -16,6 +16,11 @@
     --line: solid 0.1rem var(--color-grey-light-2);
 }
 
+// Media Queries BreakPoints
+$bp-largest: 75em; // 1200px : 16 = 75em
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+
 *,
 *::after,
 *::before {
@@ -26,7 +31,11 @@
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 62.5%; //10px
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%; // 8 px
+    }
 }
 
 body {

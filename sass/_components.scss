@@ -121,12 +121,26 @@
     list-style: none;
     font-size: 1.4rem;
     margin-top: 3.5rem;
-
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin-top: 0;
+    }
     &__item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: 0.5rem;
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
     }
 
@@ -189,6 +203,9 @@
     text-align: center;
     padding: 2.5rem;
     justify-self: flex-end;
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 ///////////////////////////////////////////////
@@ -359,6 +376,7 @@
     &__count {
     }
     &__friends {
+        display: flex;
     }
     &__photo {
         box-sizing: content-box;
@@ -381,6 +399,10 @@
     position: relative;
     overflow: hidden;
     // display: flex;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
     &__text {
         margin-bottom: 3rem;
         text-align: justify;
@@ -437,12 +459,17 @@
     padding: 3.5rem 0;
     text-align: center;
     flex: 0 1 100%;
-
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem 0;
+    }
     &__book-now {
         font-size: 2rem;
         font-weight: 300;
         text-transform: uppercase;
         margin-bottom: 2.5rem;
+        @media only screen and (max-width: $bp-medium) {
+            margin-bottom: 2rem;
+        }
     }
 }
 
